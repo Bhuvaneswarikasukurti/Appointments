@@ -1,0 +1,37 @@
+﻿@model CrossvertiseAppNew.AppDesc
+
+<div>
+    <h4>AppDesc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment.Appointment1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.Appointment1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Organizer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organizer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Attendes)
+        </dt>
+
+        <dd>
+            @foreach (string item in Model.Attendes.Split(';'))
+            {
+                @Html.DisplayFor(model => item)<br />
+            }
+        </dd>
+
+    </dl>
+</div>
+
+

@@ -1,0 +1,2 @@
+C:\Users\HP\source\repos\CrossvertiseAppNew\HomeTests\obj\Debug\HomeTests.csprojAssemblyReference.cache
+C:\Users\HP\source\repos\CrossvertiseAppNew\HomeTests\obj\Debug\HomeTests.csproj.CoreCompileInputs.cache

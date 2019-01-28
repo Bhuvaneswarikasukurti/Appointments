@@ -1,0 +1,60 @@
+﻿@model IEnumerable<CrossvertiseAppNew.Month>
+@{
+    ViewBag.Title = "Index";
+    var modelData = Model;
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script>
+    function ClearResults() {
+        $("#dvMonthdetails").empty();
+        $("#dvTeamMetingdetails").empty();
+    }
+</script>
+<h2>Index</h2>
+<div id="dvMonthsList">
+    <table border="1">
+        <tr>
+            @foreach (var item in Model)
+            {
+                <td>
+
+                    @Ajax.ActionLink(item.Month1, // <-- Text to display
+                 "GetMonthDetails", // <-- Action Method Name
+                 new { monthIdValue = item.ID },
+                 new AjaxOptions
+                 {
+                     UpdateTargetId = "dvMonthdetails", // <-- DOM element ID to update
+                     InsertionMode = InsertionMode.Replace, // <-- Replace the content of DOM element
+                     HttpMethod = "GET",
+                     OnBegin = "ClearResults"
+
+                 })
+
+
+
+
+                    @*<a href="#" id="lnkMonth">@item.month</a>*@
+                </td>
+            }
+        </tr>
+    </table>
+
+</div>
+<br />
+<br />
+<div>
+    <table>
+        <tr>
+            <td><div id="dvMonthdetails"></div></td>
+            <td><div id="dvTeamMetingdetails"></div></td>
+        </tr>
+    </table>
+
+
+
+</div>
+
+
